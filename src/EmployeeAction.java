@@ -183,6 +183,7 @@ public class EmployeeAction {
             }
         }
     }
+
     public static void PrintSalaryMoreThen(int salary) {
         for (Employee employee : EmployeeList.employees
         ) {
