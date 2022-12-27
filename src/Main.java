@@ -19,6 +19,19 @@ public class Main {
         EmployeeAction.PrintSalaryLessThen(50000);
         System.out.println();
         EmployeeAction.PrintSalaryMoreThen(50000);
+        /**
+         * Очень сложно
+         */
+        EmployeeBook employeeBook = new EmployeeBook();
+        employeeBook.createNewEmployee("Фёдоров", "Николай", "Алексеевич", 5, 50000);
+        employeeBook.createNewEmployee("Кретова", "Елена", "Викторовна", 3, 20200);
+        employeeBook.createNewEmployee("Васильева", "Нина", "Андреевна", 3, 20300);
+        employeeBook.createNewEmployee("Савинов", "Кирил", "Олегович", 4, 30500);
+        employeeBook.createNewEmployee("Резник", "Сергей", "Яковлевич", 4, 30600);
+        employeeBook.createNewEmployee("Белов", "Анатолий", "Леонидович", 5, 70100);
+        employeeBook.createNewEmployee("Белова", "Екатерина", "Александровна", 5, 70000);
+
+
     }
 
 
