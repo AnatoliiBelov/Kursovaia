@@ -15,7 +15,10 @@ public class Main {
         System.out.println("EmployeeAction.calculateAverageValueSalaryEmployeeInDepartment(5) = " + EmployeeAction.calculateAverageValueSalaryEmployeeInDepartment(5));
 EmployeeAction.indexingSalaryInOneDepartment(20,4);
 EmployeeAction.PrintAllEmployees();
-
+EmployeeAction.printEmployeesWithoutDepartmentInOneDepartment(5);
+    EmployeeAction.PrintSalaryLessThen(50000);
+        System.out.println();
+    EmployeeAction.PrintSalaryMoreThen(50000);
     }
 
 

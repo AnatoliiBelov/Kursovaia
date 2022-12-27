@@ -136,25 +136,65 @@ public class EmployeeAction {
         }
         return sumSalary;
     }
+
     public static double calculateAverageValueSalaryEmployeeInDepartment(int numberDepartment) {
         double averrageValue = 0;
-        int counterPeopleInDepartment=0;
+        int counterPeopleInDepartment = 0;
         for (Employee employee : EmployeeList.employees
-        ) {if (employee.getDepartment() != numberDepartment) {
-            continue;
-        }counterPeopleInDepartment++;
-        }averrageValue=calculateSalaryInDepartment(numberDepartment)/(double)counterPeopleInDepartment;
+        ) {
+            if (employee.getDepartment() != numberDepartment) {
+                continue;
+            }
+            counterPeopleInDepartment++;
+        }
+        averrageValue = calculateSalaryInDepartment(numberDepartment) / (double) counterPeopleInDepartment;
         return averrageValue;
     }
+
     public static void indexingSalaryInOneDepartment(int indexingValue, int numberDepartment) {
         int newSalary = 0;
         for (Employee employee : EmployeeList.employees
-        ) {if (employee.getDepartment() != numberDepartment) {
-            continue;}
+        ) {
+            if (employee.getDepartment() != numberDepartment) {
+                continue;
+            }
             newSalary = employee.getSalary() + employee.getSalary() * indexingValue / 100;
             employee.setSalary(newSalary);
         }
     }
+
+
+    public static void printEmployeesWithoutDepartmentInOneDepartment(int numberDepartment) {
+        for (Employee employee : EmployeeList.employees
+        ) {
+            if (employee.getDepartment() != numberDepartment) {
+                continue;
+
+            }
+            System.out.println(employee.getId() + " Сотрудник ФИО:" + employee.getLastName() + " " + employee.getFirstName() + " " + employee.getMiddleName() + " " + "Зарплата: " + employee.getSalary());
+        }
+    }
+
+    public static void PrintSalaryLessThen(int salary) {
+        for (Employee employee : EmployeeList.employees
+        ) {
+            if (employee.getSalary() < salary) {
+                System.out.println(employee.getId() + " Сотрудник ФИО:" + employee.getLastName() + " " + employee.getFirstName() + " " + employee.getMiddleName() + " " + "Зарплата: " + employee.getSalary());
+            }
+        }
+    }
+    public static void PrintSalaryMoreThen(int salary) {
+        for (Employee employee : EmployeeList.employees
+        ) {
+            if (employee.getSalary() >= salary) {
+                System.out.println(employee.getId() + " Сотрудник ФИО:" + employee.getLastName() + " " + employee.getFirstName() + " " + employee.getMiddleName() + " " + "Зарплата: " + employee.getSalary());
+            }
+        }
+    }
+    /**
+     * Очень сложно!!!
+     */
+
 }
 
 
