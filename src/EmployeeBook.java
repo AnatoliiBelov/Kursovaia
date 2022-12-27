@@ -1,4 +1,5 @@
 public class EmployeeBook {
+    private final int departmentNumbers = 5;
     private static final Integer EMPLOYEES_SIZE = 10;
 
     private Employee[] employees1 = new Employee[EMPLOYEES_SIZE];
@@ -200,12 +201,12 @@ public class EmployeeBook {
                 return i;
             }
         }
-        return 0;
+        return -5;
     }
 
     public void createNewEmployee(String lastName, String firstName, String middleName, int departmentNumber, int salary) {
         int index = findFreeIndex();
-        if (index == 0) {
+        if (index == -5) {
             System.out.println("В хранилище данных нет мест");
         } else employees1[index] = new Employee(lastName, firstName, middleName, departmentNumber, salary);
     }
@@ -235,6 +236,44 @@ public class EmployeeBook {
         }
     }
 
+    public void setSalaryForFullName(String lastName, String firstName, String middleName, int newSalary) {
+        for (Employee employees : employees1
+        ) {
+            for (int i = 0; i < employees1.length; i++) {
+                if (employees.getLastName() == lastName && employees.getFirstName() == firstName && employees.getMiddleName() == middleName) {
+                    employees1[i].setSalary(newSalary);
+                }
+            }
+        }
+    }
+
+    public void setDepartmentForFullName(String lastName, String firstName, String middleName, int newDepartment) {
+        for (Employee employees : employees1
+        ) {
+            for (int i = 0; i < employees1.length; i++) {
+                if (employees.getLastName() == lastName && employees.getFirstName() == firstName && employees.getMiddleName() == middleName) {
+                    employees1[i].setDepartment(newDepartment);
+                }
+            }
+        }
+    }
+
+    public void printAllEmployeesForDepartment() {
+
+        for (int i = 1; i <= departmentNumbers; i++) {
+            System.out.println("Отдел " + i + ":");
+            for (Employee employees : employees1
+            ) {
+                if (employees.getDepartment() == i) {
+                    System.out.println(employees.getLastName()+" "+employees.getFirstName()+" "+employees.getMiddleName());
+                }
+
+            }
+
+        }
+
+    }
 }
+
 
 

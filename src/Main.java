@@ -30,6 +30,11 @@ public class Main {
         employeeBook.createNewEmployee("Резник", "Сергей", "Яковлевич", 4, 30600);
         employeeBook.createNewEmployee("Белов", "Анатолий", "Леонидович", 5, 70100);
         employeeBook.createNewEmployee("Белова", "Екатерина", "Александровна", 5, 70000);
+        employeeBook.createNewEmployee( "Иванов", "Игорь", "Сергеевич", 1, 20100);
+        employeeBook.createNewEmployee("Петров", "Алексей", "Евгеньевич", 1, 20000);
+        employeeBook.createNewEmployee("Баринов", "Евгений", "Сергеевич", 2, 30100);
+
+        employeeBook.printAllEmployeesForDepartment();
 
 
     }
