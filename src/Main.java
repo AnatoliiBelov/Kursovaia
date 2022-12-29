@@ -1,24 +1,24 @@
 public class Main {
     public static void main(String[] args) {
-        EmployeeAction.PrintAllEmployees();
+        EmployeeAction.printAllEmployees();
         EmployeeAction.printSumSalary();
-        EmployeeAction.printMinSalary();
-        EmployeeAction.printMaxSalary();
+        System.out.println(EmployeeAction.searchEmployeeWithMaxSalary());
+        System.out.println(EmployeeAction.searchEmployeeWithMinSalary());
         EmployeeAction.printFIOEmployees();
         EmployeeAction.printAverageValueSalaryEmployees();
         /**Повышенная сложность!*/
         EmployeeAction.indexingSalary(89);
-        EmployeeAction.PrintAllEmployees();
+        EmployeeAction.printAllEmployees();
         System.out.println("EmployeeAction.searchMinSalaryInDepartment(2) = " + EmployeeAction.searchMinSalaryInDepartment(2));
         System.out.println("EmployeeAction.searchMaxSalaryInDepartment(3) = " + EmployeeAction.searchMaxSalaryInDepartment(3));
         System.out.println("EmployeeAction.calculateSalaryInDepartment(5) = " + EmployeeAction.calculateSalaryInDepartment(5));
         System.out.println("EmployeeAction.calculateAverageValueSalaryEmployeeInDepartment(5) = " + EmployeeAction.calculateAverageValueSalaryEmployeeInDepartment(5));
         EmployeeAction.indexingSalaryInOneDepartment(20, 4);
-        EmployeeAction.PrintAllEmployees();
+        EmployeeAction.printAllEmployees();
         EmployeeAction.printEmployeesWithoutDepartmentInOneDepartment(5);
-        EmployeeAction.PrintSalaryLessThen(50000);
+        EmployeeAction.printSalaryLessThen(50000);
         System.out.println();
-        EmployeeAction.PrintSalaryMoreThen(50000);
+        EmployeeAction.printSalaryMoreThen(50000);
         /**
          * Очень сложно
          */
@@ -32,9 +32,13 @@ public class Main {
         employeeBook.createNewEmployee("Белова", "Екатерина", "Александровна", 5, 70000);
         employeeBook.createNewEmployee( "Иванов", "Игорь", "Сергеевич", 1, 20100);
         employeeBook.createNewEmployee("Петров", "Алексей", "Евгеньевич", 1, 20000);
-        employeeBook.createNewEmployee("Баринов", "Евгений", "Сергеевич", 2, 30100);
+
 
         employeeBook.printAllEmployeesForDepartment();
+        employeeBook.printSalaryLessThen(30000);
+        EmployeeAction.printAllEmployees();
+        System.out.println(EmployeeAction.searchEmployeeWithMaxSalary());
+        System.out.println(EmployeeAction.calculateAverageValueSalaryEmployees());
 
 
     }

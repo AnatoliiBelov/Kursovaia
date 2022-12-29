@@ -1,8 +1,11 @@
 public class EmployeeAction {
 
-    public static void PrintAllEmployees() {
+    public static void printAllEmployees() {
         for (Employee employee : EmployeeList.employees
         ) {
+            if (employee == null) {
+                continue;
+            }
             System.out.println(employee);
 
         }
@@ -14,6 +17,9 @@ public class EmployeeAction {
         int sumSalary = 0;
         for (Employee employee : EmployeeList.employees
         ) {
+            if (employee == null) {
+                continue;
+            }
             sumSalary += employee.getSalary();
 
         }
@@ -27,50 +33,54 @@ public class EmployeeAction {
         System.out.println();
     }
 
-    public static int searchMinSalary() {
+    public static String searchEmployeeWithMinSalary() {
         int minSalary = Integer.MAX_VALUE;
+        String employee2 = null;
         for (Employee employee : EmployeeList.employees
         ) {
+            if (employee == null) {
+                continue;
+            }
             if (minSalary > employee.getSalary()) {
                 minSalary = employee.getSalary();
+                employee2 = employee.getLastName() + " " + employee.getFirstName() + " " + employee.getMiddleName();
             }
         }
-        return minSalary;
+        return employee2;
 
     }
 
-    public static void printMinSalary() {
-        System.out.println("Минимальная зарплата " + searchMinSalary());
-        System.out.println();
-    }
 
-    public static int searchMaxSalary() {
+    public static String searchEmployeeWithMaxSalary() {
         int maxSalary = Integer.MIN_VALUE;
+        String employee2 = null;
         for (Employee employee : EmployeeList.employees
         ) {
+            if (employee == null) {
+                continue;
+            }
             if (maxSalary < employee.getSalary()) {
                 maxSalary = employee.getSalary();
+                employee2 = employee.getLastName() + " " + employee.getFirstName() + " " + employee.getMiddleName();
             }
         }
-        return maxSalary;
+        return employee2;
     }
 
-    public static void printMaxSalary() {
-        System.out.println("Максимальная зарплата " + searchMaxSalary());
-        System.out.println();
-    }
 
-    public static double calculateAverageValueSalaryEmployee() {
+    public static double calculateAverageValueSalaryEmployees() {
         double averrageValue = 0;
-        for (Employee employee : EmployeeList.employees
-        ) {
-            averrageValue = (calculateSalary() / (double) EmployeeList.employees.length);
+        double quantityOfEmployees = 0;
+        for (int i = 0; i < EmployeeList.employees.length; i++) {
+            if (EmployeeList.employees[i]==null){continue;}
+            quantityOfEmployees++;
         }
+        averrageValue = calculateSalary() / quantityOfEmployees;
         return averrageValue;
     }
 
     public static void printAverageValueSalaryEmployees() {
-        System.out.printf("Средняя зарплата составляет: %.2f", calculateAverageValueSalaryEmployee());
+        System.out.printf("Средняя зарплата составляет: %.2f", calculateAverageValueSalaryEmployees());
         System.out.println();
 
     }
@@ -89,7 +99,7 @@ public class EmployeeAction {
     public static void indexingSalary(int indexingValue) {
         int newSalary = 0;
         for (Employee employee : EmployeeList.employees
-        ) {
+        ) {if (employee==null){continue;}
             newSalary = employee.getSalary() + employee.getSalary() * indexingValue / 100;
             employee.setSalary(newSalary);
         }
@@ -98,7 +108,7 @@ public class EmployeeAction {
     public static int searchMinSalaryInDepartment(int numberDepartment) {
         int minSalary = Integer.MAX_VALUE;
         for (Employee employee : EmployeeList.employees
-        ) {
+        ) {if (employee==null){continue;}
             if (employee.getDepartment() != numberDepartment) {
                 continue;
             }
@@ -113,7 +123,7 @@ public class EmployeeAction {
     public static int searchMaxSalaryInDepartment(int numberDepartment) {
         int maxSalary = Integer.MIN_VALUE;
         for (Employee employee : EmployeeList.employees
-        ) {
+        ) {if (employee==null){continue;}
             if (employee.getDepartment() != numberDepartment) {
                 continue;
             }
@@ -127,7 +137,7 @@ public class EmployeeAction {
     public static int calculateSalaryInDepartment(int numberDepartment) {
         int sumSalary = 0;
         for (Employee employee : EmployeeList.employees
-        ) {
+        ) {if (employee==null){continue;}
             if (employee.getDepartment() != numberDepartment) {
                 continue;
             }
@@ -141,7 +151,7 @@ public class EmployeeAction {
         double averrageValue = 0;
         int counterPeopleInDepartment = 0;
         for (Employee employee : EmployeeList.employees
-        ) {
+        ) {if (employee==null){continue;}
             if (employee.getDepartment() != numberDepartment) {
                 continue;
             }
@@ -154,7 +164,7 @@ public class EmployeeAction {
     public static void indexingSalaryInOneDepartment(int indexingValue, int numberDepartment) {
         int newSalary = 0;
         for (Employee employee : EmployeeList.employees
-        ) {
+        ) {if (employee==null){continue;}
             if (employee.getDepartment() != numberDepartment) {
                 continue;
             }
@@ -166,7 +176,7 @@ public class EmployeeAction {
 
     public static void printEmployeesWithoutDepartmentInOneDepartment(int numberDepartment) {
         for (Employee employee : EmployeeList.employees
-        ) {
+        ) {if (employee==null){continue;}
             if (employee.getDepartment() != numberDepartment) {
                 continue;
 
@@ -175,18 +185,18 @@ public class EmployeeAction {
         }
     }
 
-    public static void PrintSalaryLessThen(int salary) {
+    public static void printSalaryLessThen(int salary) {
         for (Employee employee : EmployeeList.employees
-        ) {
+        ) {if (employee==null){continue;}
             if (employee.getSalary() < salary) {
                 System.out.println(employee.getId() + " Сотрудник ФИО:" + employee.getLastName() + " " + employee.getFirstName() + " " + employee.getMiddleName() + " " + "Зарплата: " + employee.getSalary());
             }
         }
     }
 
-    public static void PrintSalaryMoreThen(int salary) {
+    public static void printSalaryMoreThen(int salary) {
         for (Employee employee : EmployeeList.employees
-        ) {
+        ) {if (employee==null){continue;}
             if (employee.getSalary() >= salary) {
                 System.out.println(employee.getId() + " Сотрудник ФИО:" + employee.getLastName() + " " + employee.getFirstName() + " " + employee.getMiddleName() + " " + "Зарплата: " + employee.getSalary());
             }
